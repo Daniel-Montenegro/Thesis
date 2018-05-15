@@ -81,6 +81,26 @@ int main(int argc, char *argv[])
     }
   fclose(in);
 
+  //escritura en ascii
+  int k,j;
+  
+  for(i=0;i<n_total;i++)
+    binary[i]=(float *)malloc(n_nodes * sizeof(float ));
+  for(i=0;i<n_total;i++)
+    {
+      for(j=0;j<n_total;j++)
+	{
+	  for(k=0;k<n_total;k++)
+	    {
+	      n=k+n_x*(j+n_x*i); //n_x=256
+	      fprintf(in,"%16.8f \n",binary[i][j][k]);
+	    }
+	}
+    }
+  
+  
+  
+  
   
   return 0;
   
