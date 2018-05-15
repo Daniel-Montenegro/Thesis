@@ -93,11 +93,10 @@ int main(int argc, char *argv[])
     {
       for(j=0;j<n_x;j++)
 	{
-	  for(k=0;k<n_x;k++)
-	    {
-	      n=k+n_x*(j+n_x*i); //n_x=256
-	      //fprintf(in,"%16.8f \n",binary[n]);
-	    }
+	  k=0.0
+	  n=k+n_x*(j+n_x*i); //n_x=256
+	  fprintf(in,"%16.8f %16.8f \n",binary[n], binary[n+1] );
+	  
 	  //fprintf(in,"\n");
 	}
     }
