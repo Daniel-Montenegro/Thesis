@@ -74,32 +74,34 @@ int main(int argc, char *argv[])
   
   in = fopen(filename,"w");
   
-  
+  /*
   for(i=0; i<n_total; i=i+3)
     {
       fprintf(in,"%16.8f %16.8f %16.8f\n",binary[i], binary[i+1], binary[i+2]);
     }
   fclose(in);
+  */
 
+  
   //escritura en ascii
-  int k,j;
+  int k,j,n;
   
   for(i=0;i<n_total;i++)
     binary[i]=(float *)malloc(n_nodes * sizeof(float ));
-  for(i=0;i<n_total;i++)
+
+  for(i=0;i<n_x;i++)
     {
-      for(j=0;j<n_total;j++)
+      for(j=0;j<n_x;j++)
 	{
-	  for(k=0;k<n_total;k++)
+	  for(k=0;k<n_x;k++)
 	    {
 	      n=k+n_x*(j+n_x*i); //n_x=256
-	      fprintf(in,"%16.8f \n",binary[i][j][k]);
+	      //fprintf(in,"%16.8f \n",binary[n]);
 	    }
+	  //fprintf(in,"\n");
 	}
     }
-  
-  
-  
+  fclose(in);
   
   
   return 0;
