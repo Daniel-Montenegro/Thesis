@@ -55,15 +55,17 @@ int main(int argc, char *argv[])
   n_total = n_x * n_y * n_z;
   printf("n_x= %d, n_y= %d n_z= %d \n", n_x, n_y, n_z);
   
-  if(!(binary=(float **)malloc(n_nodes * sizeof(float*))))
+  if(!(binary=(float **)malloc(n_x * sizeof(float*))))
     {
       fprintf(stderr, "problem with array allocation\n");
       exit(1);
     }
   
   fread(&dumb,sizeof(int),1,in);
+  printf("dumb= %d\n",dumb);
   fread(&(binary[0]),sizeof(float), n_total, in);
   fread(&dumb,sizeof(int),1,in);
+  printf("dumb= %d\n",dumb);
   
   fclose(in);
 
@@ -85,20 +87,36 @@ int main(int argc, char *argv[])
   
   //escritura en ascii
   int k,j,n;
-  
-  for(i=0;i<n_total;i++)
-    binary[i]=(float *)malloc(n_nodes * sizeof(float ));
+  float **matrix;
 
+  matrix=(float **)malloc(n_x * sizeof(float *)); //asignando en memoria la matriz 
+  for(i=0;i<n_total;i++){
+    //binary[i]=(float *)malloc(n_x * sizeof(float ));
+    matrix[i]=(float *)malloc(n_x * sizeof(float ));
+  }
+
+  //====Asigna valores a la matriz====//
   for(i=0;i<n_x;i++)
     {
       for(j=0;j<n_x;j++)
 	{
-	  k=0.0
+	  matrix[i][j]=0.0;
+	}
+    }
+  
+  
+  for(i=0;i<n_x;i++)
+    {
+      for(j=0;j<n_x;j++)
+	{
+	  k=0; //tomando slices con z=0
 	  n=k+n_x*(j+n_x*i); //n_x=256
-	  fprintf(in,"%16.8f %16.8f \n",binary[n], binary[n+1] );
+	  matrix[i][j]=*binary[n];
+	  fprintf(in,"%16.8f",matrix[i][j] );
 	  
 	  //fprintf(in,"\n");
 	}
+      fprintf(in,"\n");
     }
   fclose(in);
   
