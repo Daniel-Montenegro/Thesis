@@ -1,0 +1,46 @@
+Marco Teórico 
+
+Introducción
+	- Recuento histórico sobre nuestra concepción del Universo, abordar problema y cómo hacerlo
+
+1. Cosmología 15 pag
+	- Relatividad General en el ámbito cosmológico (Universo homogéneo e isotrópico )
+	- Ecuaciones de Eistein
+	- Métrica de Robertson-Walker
+	- Ecuaciones de Friedmann
+	- Régimen lineal  para la formación de estructuras	
+	(resolver las ecuaciones de forma analíticamete las formas lineales)
+		-Aproximación Newtoniana
+	-Régimen cuasi  lineal para la formación de estructura
+		-Aproximación de Zeldovich
+	-Régimen no lineal para la formación de estructura
+		-simulaciones cosmológicas
+	Clasificación de galaxias
+
+2. Modelo spin  10 pag
+	- BH  (qué son, qué es?, por qué son importantes?,  clasificación)
+	- Spin BH (qué es?, por qué son importantes?, )
+	- Modelo de spin 
+
+3. Algoritmos y Modelación 
+	- N-cuerpos
+	- Simulaciones cosmológicas 
+	- Condiciones iniciales
+	- Modelo hidrodinámico (Si da tiempo !!)	
+	- Modelo subgrid (BH y spin)
+
+4. Clasificación entorno cosmológico (Cosmic web)
+	- ¿Por qué es importante clasificar el entorno?
+	- Métodos
+	- Clasificación
+
+Resultados y Análisis 
+
+6.  Alineamiento de spin con la estructura (Resultados)
+	-Gráficas sobre alineación 
+	-Clasificación de galaxias 
+	-Que tipo de galaxias se alinean mejor con el entorno
+	-Correlaciones de galaxias y entorno
+	-Observaciones con alineación
+
+7. Conclusiones
