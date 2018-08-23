@@ -22,6 +22,7 @@ import os
 
 #===========================================
 
+
 """
 ***********************************
     --> Lectura Subhalos
@@ -37,7 +38,10 @@ sub = gadget.Subfind('../../Data/groups_015/fof_subhalo_tab_015.0.hdf5' ,combine
 Mass_halo= sub.SubhaloMass*10e10/0.7 
 vel_halo = sub.SubhaloVel ##km/s 
 vel_dis_halo = sub.SubhaloVelDisp ##km/s 
-vel_max_halo = sub.SubhaloVmax  ##km/s 
+vel_max_halo = sub.SubhaloVmax  ##km/s
+spin_halo=sub.SubhaloSpin ##ckpc/h
+r_halo = sub.SubhaloPos ## posicion en x,y,z ckp/h
+
 
 print("-----------------------------------\n")
 print("Termina asignacion de los subfind\n")
@@ -113,7 +117,6 @@ Sn_bh = gadget.Snapshot('../../Data/snap_015.0.hdf5', parttype=[5])
 Spin_bh=Sn_bh.BH_SpinOrientation #Spin de los black hole
 r_bh = Sn_bh.Coordinates  # cordanada en x,y,z
 Mass_bh = Sn_bh.BH_Mass*10e10/0.7
-Mass_halo = Sn_bh.Masses
 vel_disp_bh = Sn_bh.SubfindVelDisp  ##km/s
 vel_bh = Sn_bh.Velocities ##km*sqrt(a)/s
 
@@ -271,19 +274,41 @@ def Eigen_vec(r):
 print("---------------------------------\n")
 print("Inicia calculo de cos(theta)\n")
 
-Mag_EigenVec=[]
+Mag_EigenVec_bh=[]
+Mag_EigenVec_halo=[]
 Mag_Spin_bh=[]
-Dot=[]
-EigenVec=[]
-cos_theta=[]
-for i in range(len(r_bh)):
+Mag_Spin_halo=[]
+Dot_bh=[]
+Dot_halo=[]
+EigenVec_bh=[]
+EigenVec_halo=[]
+cos_theta_bh=[]
+cos_theta_halo=[]
 
-    EigenVec.append(Eigen_vec(r_bh[i]))
+for i in range(len(r_bh)):
     
-    Mag_EigenVec.append(np.linalg.norm(EigenVec[i])) ##magnitud del autovector
+    #Enviroment=np.append(Enviroment,[Eigen_vec(r_bh[i])])
+    #New_enviroment=reshape(Enviroment,(1,n_x))
+    EigenVec_bh.append(Eigen_vec(r_bh[i]))
+        
+    Mag_EigenVec_bh.append(np.linalg.norm(EigenVec_bh[i])) ##magnitud del autovector
+    
     Mag_Spin_bh.append(np.linalg.norm(Spin_bh[i]))       ##magnitud del Spin_bh
-    Dot.append(np.vdot(EigenVec[i],Spin_bh[i])) ##Productopunto del autovec y spin_bh
-    cos_theta.append(Dot[i]/(Mag_EigenVec[i]*Mag_Spin_bh[i])) 
+        
+    Dot_bh.append(np.vdot(EigenVec_bh[i],Spin_bh[i]))      ##Productopunto del autovec y spin_bh
+        
+    cos_theta_bh.append(Dot_bh[i]/(Mag_EigenVec_bh[i]*Mag_Spin_bh[i])) 
+    
+
+for i in range(len(r_halo)):
+    
+    EigenVec_halo.append(Eigen_vec(r_halo[i]))
+    Mag_EigenVec_halo.append(np.linalg.norm(EigenVec_halo[i])) ##magnitud del autovector
+    Mag_Spin_halo.append(np.linalg.norm(spin_halo[i]))       ##magnitud del Spin_bh
+    Dot_halo.append(np.vdot(EigenVec_halo[i],spin_halo[i]))      ##Productopunto del autovec y spin_bh
+    cos_theta_halo.append(Dot_halo[i]/(Mag_EigenVec_halo[i]*Mag_Spin_halo[i])) 
+    
+
 
 print("---------------------------------\n")
 print("Termina calculo de cos(theta)\n")
@@ -301,11 +326,22 @@ Graficas
 print("---------------------------------\n")
 print("Inicia Grafica\n")
 
+
 plt.figure()
-plt.plot(np.log10(Mass_bh),cos_theta,'.')
+plt.plot(np.log10(Mass_bh),cos_theta_bh,'.')
 plt.xlabel('$\log_{10}(M_{bh})[M_{\odot}]$')
 plt.ylabel('$\cos( \Theta ) $')
-plt.savefig('Alination_Enviroment.png')
+plt.savefig('Alinacion_Enviroment_bh.png')
+
+print("tamano mass=",(len(Mass_halo)))
+print("tamano theta=",(len(cos_theta_halo)))
+
+
+plt.figure()
+plt.plot(np.log10(Mass_halo),cos_theta_halo,'.')
+plt.xlabel('$\log_{10}(M_{bh})[M_{\odot}]$')
+plt.ylabel('$\cos( \Theta ) $')
+plt.savefig('Alinacion_Enviroment_halo.png')
 
 print("---------------------------------\n")
 print("Termina Grafica\n")

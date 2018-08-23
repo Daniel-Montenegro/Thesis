@@ -5,9 +5,12 @@
 """
 
 import numpy as np
-from scipy.optimize import curve_fit
+#from scipy.optimize import curve_fit
 from scipy import stats
+import matplotlib
+matplotlib.use('agg')
 import matplotlib.pyplot as plt
+
 import gadget 
 import arepo
 
@@ -31,8 +34,14 @@ import os
 """
 print("-----------------------------------\n")
 print("Inicia asignacion de los subfind\n")
+print("En cosmobh02")
+#DataFolder = "/home/dmontenegro/Data/Sims512/"
+#simulation = "cosmobh02/"
+#File = "fof_subhalo_tab_015.0.hdf5"
+#sub = gadget.Subfind("%s%s%s"%(DataFolder,simulation,File) ,combineFiles=True)
+sub = gadget.Subfind('/home/dmontenegro/Data/Sims512/cosmobh02/groups_015/fof_subhalo_tab_015.0.hdf5' ,combineFiles=True)
 
-sub = gadget.Subfind('../../Data/groups_015/fof_subhalo_tab_015.0.hdf5' ,combineFiles=True)
+
 
 
 Mass_halo= sub.SubhaloMass*10e10/0.7 
@@ -56,6 +65,7 @@ Bines=np.int(np.sqrt(len(Mass_halo)))
 plt.figure()
 plt.hist(np.log10(Mass_halo),bins=Bines)
 plt.xlim(9,14)
+plt.title("cosmobh02")
 plt.xlabel("$\log_{10}(Mass_{halo})[M_{\odot}]$")
 plt.savefig("histo_Mass_halo.png")
 
@@ -70,18 +80,21 @@ GRAFICAS DE VERIFIVACION
 
 plt.figure()
 plt.plot(np.log10(vel_max_halo),np.log10(Mass_halo),".")
+plt.title("cosmobh02")
 plt.xlabel("$Vel_{max,halo}[km/s]$")
 plt.ylabel("$\log_{10}(Mass_{halo})[Mass_{\odot}]$")
 plt.savefig('vel_max_VS_mass_Halo.png')
 
 plt.figure()
 plt.plot(np.log10(vel_dis_halo),np.log10(Mass_halo),".")
+plt.title("cosmobh02")
 plt.xlabel("$\log(\sigma_{halo})[km/s]$")
 plt.ylabel("$\log_{10}(Mass_{halo})[Mass_{\odot}]$")
 plt.savefig('vel_dis_VS_mass_Halo.png')
 
 plt.figure()
 plt.plot(np.log10(vel_halo[:,0]),np.log10(Mass_halo),".") ###velocidad en la direcion en X
+plt.title("cosmobh02")
 plt.xlabel("$\log(vel_{halo})[km/s]$")
 plt.ylabel("$\log_{10}(Mass_{halo})[Mass_{\odot}]$")
 plt.savefig('vel_VS_mass_Halo.png')
@@ -92,6 +105,7 @@ print("Termina graficas de control halos\n")
 #===============================================================
 
 
+
 """
 ***********************************
     --> Lectura snapshots
@@ -100,11 +114,11 @@ print("Termina graficas de control halos\n")
 """
 print("-----------------------------------\n")
 print("Inicia asignacion de los snapshots\n")
+print("En cosmobh02")
 
+Sn_bh = gadget.Snapshot('/home/dmontenegro/Data/Sims512/cosmobh02/snapdir_015/snap_015.0.hdf5', parttype=[5], combineFiles=True, verbose=True)
 
-#Sn_bh = gadget.Snapshot('../../Data/snap_015.0.hdf5', parttype=[5], combineFiles=True, verbose=True)
-
-Sn_bh = gadget.Snapshot('../../Data/snap_015.0.hdf5', parttype=[5])
+#Sn_bh = gadget.Snapshot('../../Data/snap_015.0.hdf5', parttype=[5])
 
 
 
@@ -122,7 +136,6 @@ print("-----------------------------------\n")
 print("Termina asignacion de los snapshots\n")
 
 
-
 print(":::::::::::::::::::::::::::::::::::::\n")
 print("Inicia graficas de control BH\n")
 
@@ -132,7 +145,8 @@ Histograma de masa de los BH's
 Bines=np.int(np.sqrt(len(Mass_bh)))
 #hist_Mass_halo=np.histogram(np.log10(Mass_halo), bins=17)
 plt.figure()
-plt.hist(np.log10(Mass_bh),bins=5)
+plt.hist(np.log10(Mass_bh),bins=Bines)
+plt.title("cosmobh02")
 plt.xlabel("$\log_{10}(Mass_{bh})[M_{\odot}]$")
 plt.savefig("histo_Mass_bh.png")
 
@@ -147,18 +161,22 @@ GRAFICAS DE VERIFIVACION
 
 plt.figure()
 plt.plot(np.log10(vel_bh[:,0]),np.log10(Mass_bh),".")
+plt.title("cosmobh02")
 plt.xlabel("$Vel_{bh}[km/s]$")
 plt.ylabel("$\log_{10}(Mass_{bh})[Mass_{\odot}]$")
 plt.savefig('vel_max_VS_mass_bh.png')
 
 plt.figure()
 plt.plot(np.log10(vel_disp_bh),np.log10(Mass_bh),".")
+plt.title("cosmobh02")
 plt.xlabel("$\log(\sigma_{halo})[km/s]$")
 plt.ylabel("$\log_{10}(Mass_{bh})[Mass_{\odot}]$")
 plt.savefig('vel_dis_VS_mass_bh.png')
 
 print(":::::::::::::::::::::::::::::::::::::\n")
 print("Termina graficas de control halos\n")
+
+
 
 
 
@@ -174,7 +192,7 @@ print("Termina graficas de control halos\n")
 print("---------------------------------\n")
 print("Inicia lectura datos Tweb\n")
 
-folder = '/home/daniel/Documentos/Tesis/Data/Tweb_512/'
+folder = '/home/dmontenegro/Data/Sims512/Tweb_512/'
 file = 'snap_015.s1.00.eigenvec_1'
 
 print("Reading eigenvector file")
@@ -302,11 +320,20 @@ Graficas
 print("---------------------------------\n")
 print("Inicia Grafica\n")
 
+
 plt.figure()
-plt.plot(np.log10(Mass_bh),cos_theta,'.')
-plt.xlabel('$\log_{10}(M_{bh})[M_{\odot}]$')
-plt.ylabel('$\cos( \Theta ) $')
-plt.savefig('Alination_Enviroment.png')
+plt.plot(np.log10(Mass_bh),cos_theta,".")
+plt.title("cosmobh02")
+plt.xlabel("$\log_{10}(M_{bh})[M_{\odot}]$")
+plt.ylabel("$\cos( \Theta )$")
+plt.savefig("Alination_Enviroment.png")
+#plt.show()
+
+
+
+#fig = plt.figure()
+#plt.plot(range(10))
+#fig.savefig('temp.png', dpi=fig.dpi)
 
 print("---------------------------------\n")
 print("Termina Grafica\n")
