@@ -38,7 +38,7 @@ print("Inicia asignacion de los subfind\n")
 sub = gadget.Subfind('/home/dmontenegro/Data/Sims512/cosmobh01/groups_015/fof_subhalo_tab_015.0.hdf5' ,combineFiles=True)
 
 
-Mass_halo= sub.SubhaloMass*10e10/0.7 
+Mass_halo= sub.SubhaloMass*1e10/0.7 
 vel_halo = sub.SubhaloVel ##km/s 
 vel_dis_halo = sub.SubhaloVelDisp ##km/s 
 vel_max_halo = sub.SubhaloVmax  ##km/s 
@@ -61,7 +61,7 @@ Histograma de masa de los halos
 Bines=np.int(np.sqrt(len(Mass_halo)))
 #hist_Mass_halo=np.histogram(np.log10(Mass_halo), bins=17)
 plt.figure()
-plt.hist(np.log10(Mass_halo),bins=Bines)
+plt.hist(np.log10(Mass_halo),bins=Bines, log=True)
 plt.xlim(9,14)
 plt.title("cosmobh01")
 plt.xlabel("$\log_{10}(Mass_{halo})[M_{\odot}]$")
@@ -125,7 +125,7 @@ Sn_bh = gadget.Snapshot('/home/dmontenegro/Data/Sims512/cosmobh01/snapdir_015/sn
 
 Spin_bh=Sn_bh.BH_SpinOrientation #Spin de los black hole
 r_bh = Sn_bh.Coordinates  # cordanada en x,y,z
-Mass_bh = Sn_bh.BH_Mass*10e10/0.7
+Mass_bh = Sn_bh.BH_Mass*1e10/0.7
 vel_disp_bh = Sn_bh.SubfindVelDisp  ##km/s
 vel_bh = Sn_bh.Velocities ##km*sqrt(a)/s
 
@@ -142,7 +142,7 @@ Histograma de masa de los BH's
 Bines=np.int(np.sqrt(len(Mass_bh)))
 #hist_Mass_halo=np.histogram(np.log10(Mass_halo), bins=17)
 plt.figure()
-plt.hist(np.log10(Mass_bh),bins=Bines)
+plt.hist(np.log10(Mass_bh),bins=Bines, log=True)
 plt.title("cosmobh01")
 plt.xlabel("$\log_{10}(Mass_{bh})[M_{\odot}]$")
 plt.savefig("histo_Mass_bh.png")
