@@ -1,0 +1,139 @@
+\documentclass[twoside,12pt]{Latex/Classes/PhDthesisPSnPDF}
+
+
+\include{Latex/Macros/Macros}
+
+
+%: ----------------------------------------------------------------------
+%:                  TITLE PAGE: name, degree,..
+% -----------------------------------------------------------------------
+
+% Title of the dissertation
+\title{ALINIAMIENTO DE AGNs CON SU ENTORNO A GRAN ESCALA}
+
+
+% ----------------------------------------------------------------------
+% This section below defines front covert (external and internal)
+% Shield logo
+\crest{\includegraphics[width=3cm]{figures/0_frontmatter/UdeA_Shield}}
+% Full logo
+%\crest{\includegraphics[width=6cm]{UDeusto}}
+\university{Universidad de Antioquia \\ 
+Facultad de Ciencias Exactas y Naturales \\ 
+Instituto de Física}
+\degree{}
+\author{\textbf{Daniel Esteban Montenegro Taborda}} 
+\collegeordept{Facultad de Ciencias Exactas y Naturales \\ 
+Instituto de Física}
+\textadvisor{}
+\advisor{\textbf{Asesor:} Sebastian Bustamante-Jaramillo \\
+\textbf{Co-asesor:} Juan C. Mu\~noz\ \ \ }
+\textsignaturecandidate{Estudiante}
+\textsignatureadvisor{Asesor\hspace{2.5 cm} Co-asesor}
+
+\cityofbirth{Medellín}
+%\degreedate{\monthname \ \the\year}
+\degreedate{Noviembre \the\year}
+% ----------------------------------------------------------------------
+% turn of those nasty overfull and underfull hboxes
+\hbadness=10000
+\hfuzz=50pt
+
+%Mejora Traducciones
+\MejorarTraducciones
+
+
+%: --------------------------------------------------------------
+%:                  FRONT MATTER: dedications, abstract,..
+% --------------------------------------------------------------
+
+\begin{document}
+\selectlanguage{spanish}
+% sets line spacing
+\renewcommand\baselinestretch{1.2}
+\baselineskip=18pt plus1pt
+
+\maketitle 
+
+% Dedication
+\include{chapters/0_dedication}
+
+% Title back
+%\include{chapters/0_title_back}
+
+% The frontmatter text starts here
+\frontmatter
+
+%\include{chapters/0_dedication}
+
+\include{chapters/0_abstract}
+
+\include{chapters/0_acknowledgement}
+
+%\selectlanguage{spanish}
+
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+\tableofcontents
+
+\listoffigures
+%\listoftables
+
+
+
+\include{chapters/0_glossary}
+
+\label{sec:glossary}
+
+%: --------------------------------------------------------------
+%:                  MAIN DOCUMENT SECTION
+% --------------------------------------------------------------
+
+\mainmatter
+
+\pagestyle{fancy}
+
+
+
+%------------------------- Introduction ------------------------
+%\include{chapters/1_introduction}
+
+%---------------------- Theoretical Frame -----------------------
+
+\include{chapters/2_theoretical_framework}	
+\include{chapters/3_AGNs}
+
+%--------------------------Spin Model ----------------------
+\include{chapters/4_Modelo_Spin}
+
+%--------------------- Algoritmo_Modelacion ------------------------
+\include{chapters/5_Algoritmo_Modelacion}
+			
+%----------- Clasificación entorno cosmológico-------------------
+\include{chapters/6_Cosmic_Web}
+
+% --------------------------------------------------------------
+%:                  BACK MATTER: appendices, refs,..
+% --------------------------------------------------------------
+
+\backmatter
+
+
+%: ----------------------- bibliography ------------------------
+
+
+
+%\bibliographystyle{abbrv}
+
+\bibliographystyle{plainnat}
+%\bibliographystyle{abbrvnat}
+\bibliography{chapters/references}
+
+%\printnomenclature 
+% --------------------------------------------------------------
+
+
+
+\end{document}

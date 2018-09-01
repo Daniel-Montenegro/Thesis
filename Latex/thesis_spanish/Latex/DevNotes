@@ -1,0 +1,43 @@
+﻿
+                 --- Latex PhD template for the University of Deusto ---
+                 			 
+
+                 ---     Developing notes      ---
+
+
+
+-- Language support
+
+To get language support in various languages we need to set in PhDtehissPSnPDF.cls
+
+\usepackage[utf8x]{inputenc}
+\usepackage{ucs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage[spanish,english,activeacute]{babel}
+
+
+You can specify all three languages in the babel options, where the last one is the default language for the document.
+
+Code: Select all
+    \usepackage[portuges,french,english]{babel}
+
+
+Wherever you need, you can switch to a certain language and write your text in this language.
+
+Code: Select all
+    \selectlanguage{portuges}
+
+
+This is supposed to be for longer text passages. For short text you can use another command.
+
+Code: Select all
+    \foreignlanguage{portuges}{Short text in Portuguese}
+
+
+For more information refer to the babel manual and study it thoroughly.
+
+
+Caution: when \selectlanguage is used, improved translations are lots
