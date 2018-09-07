@@ -1,0 +1,202 @@
+This is LuaTeX, Version beta-0.80.0 (TeX Live 2015/Debian) (rev 5238)  (format=lualatex 2017.10.15)  20 JUN 2018 11:54
+ restricted \write18 enabled.
+**0_dedication.tex
+(./0_dedication.tex
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 1 language(s) loaded.
+
+! LaTeX Error: Environment dedication undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3 \begin{dedication}
+                     %this creates the heading for the dedication page
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 ...sable para que todo esto se hiciera posible.}
+                                                  
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (38.79431pt too wide) in paragraph at lines 5--6
+[][]\OT1/cmr/m/it/10 Este
+ []
+
+
+Overfull \hbox (15.71652pt too wide) in paragraph at lines 5--6
+\OT1/cmr/m/it/10 tra-
+ []
+
+
+Overfull \hbox (17.37766pt too wide) in paragraph at lines 5--6
+\OT1/cmr/m/it/10 bajo
+ []
+
+
+Overfull \hbox (17.1221pt too wide) in paragraph at lines 5--6
+\OT1/cmr/m/it/10 esta
+ []
+
+
+Overfull \hbox (17.88875pt too wide) in paragraph at lines 5--6
+\OT1/cmr/m/it/10 ded-
+ []
+
+
+Overfull \hbox (6.6444pt too wide) in paragraph at lines 5--6
+\OT1/cmr/m/it/10 i-
+ []
+
+
+Overfull \hbox (19.42209pt too wide) in paragraph at lines 5--6
+\OT1/cmr/m/it/10 cado
+ []
+
+
+Overfull \hbox (5.11108pt too wide) in paragraph at lines 5--6
+\OT1/cmr/m/it/10 a
+ []
+
+
+Overfull \hbox (11.24438pt too wide) in paragraph at lines 5--6
+\OT1/cmr/m/it/10 mi
+ []
+
+
+Overfull \hbox (28.62207pt too wide) in paragraph at lines 5--6
+\OT1/cmr/m/it/10 amada
+ []
+
+
+Overfull \hbox (27.34427pt too wide) in paragraph at lines 5--6
+\OT1/cmr/m/it/10 abuela
+ []
+
+
+Overfull \hbox (4.85551pt too wide) in paragraph at lines 5--6
+\OT1/cmr/m/it/10 y
+ []
+
+
+Overfull \hbox (11.24438pt too wide) in paragraph at lines 5--6
+\OT1/cmr/m/it/10 mi
+ []
+
+
+Overfull \hbox (29.77202pt too wide) in paragraph at lines 5--6
+\OT1/cmr/m/it/10 madre.
+ []
+
+
+Overfull \hbox (16.11101pt too wide) in paragraph at lines 5--6
+\OT1/cmr/m/it/10 Por
+ []
+
+
+Overfull \hbox (9.4555pt too wide) in paragraph at lines 5--6
+\OT1/cmr/m/it/10 su
+ []
+
+
+Overfull \hbox (22.74431pt too wide) in paragraph at lines 5--6
+\OT1/cmr/m/it/10 lucha
+ []
+
+
+Overfull \hbox (12.26659pt too wide) in paragraph at lines 5--6
+\OT1/cmr/m/it/10 in-
+ []
+
+
+Overfull \hbox (22.48872pt too wide) in paragraph at lines 5--6
+\OT1/cmr/m/it/10 cans-
+ []
+
+
+Overfull \hbox (16.86655pt too wide) in paragraph at lines 5--6
+\OT1/cmr/m/it/10 able
+ []
+
+
+Overfull \hbox (18.52763pt too wide) in paragraph at lines 5--6
+\OT1/cmr/m/it/10 para
+ []
+
+
+Overfull \hbox (14.56656pt too wide) in paragraph at lines 5--6
+\OT1/cmr/m/it/10 que
+ []
+
+
+Overfull \hbox (18.14432pt too wide) in paragraph at lines 5--6
+\OT1/cmr/m/it/10 todo
+ []
+
+
+Overfull \hbox (17.1221pt too wide) in paragraph at lines 5--6
+\OT1/cmr/m/it/10 esto
+ []
+
+
+Overfull \hbox (8.68883pt too wide) in paragraph at lines 5--6
+\OT1/cmr/m/it/10 se
+ []
+
+
+Overfull \hbox (29.2609pt too wide) in paragraph at lines 5--6
+\OT1/cmr/m/it/10 hiciera
+ []
+
+
+Overfull \hbox (20.4443pt too wide) in paragraph at lines 5--6
+\OT1/cmr/m/it/10 posi-
+ []
+
+
+Overfull \hbox (14.82211pt too wide) in paragraph at lines 5--6
+\OT1/cmr/m/it/10 ble. 
+ []
+
+
+! LaTeX Error: \begin{document} ended by \end{dedication}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 \end{dedication}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+)
+! Emergency stop.
+<*> 0_dedication.tex
+                 
+*** (job aborted, no legal \end found)
+
+
+
+Here is how much of LuaTeX's memory you used:
+ 12 strings out of 495004
+ 100000,89155 words of node,token memory allocated 1460 words of node memory still in use:
+   29 hlist, 6 disc, 57 glue, 12 kern, 8 penalty, 104 glyph, 33 glue_spec, 1 loc
+al_par, 1 dir nodes
+   avail lists: 2:12,3:1,6:1,7:28
+ 3699 multiletter control sequences out of 65536+600000
+ 15 fonts using 601983 bytes
+ 13i,1n,10p,146b,69s stack positions out of 5000i,500n,10000p,200000b,100000s
+!  ==> Fatal error occurred, no output PDF file produced!
