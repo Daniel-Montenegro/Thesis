@@ -247,7 +247,7 @@
 \usepackage{amsmath}
 \usepackage[T1]{fontenc}
 \usepackage{wrapfig}
-\usepackage[utf8x]{inputenc}
+%\usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
 \usepackage{amssymb}
 \usepackage{upgreek }

@@ -8,10 +8,11 @@
 \contentsline {section}{\numberline {1.2}Geometría}{3}{section.1.2}
 \contentsline {subsection}{\numberline {1.2.1}Métrica}{3}{subsection.1.2.1}
 \contentsline {section}{\numberline {1.3}Ecuaciones de Friedmann}{6}{section.1.3}
-\contentsline {section}{\numberline {1.4}Régimen Lineal Para la Formación de Estructuras.}{8}{section.1.4}
-\contentsline {subsection}{\numberline {1.4.1}Régimen Newtoniano.}{8}{subsection.1.4.1}
-\contentsline {section}{\numberline {1.5}Régimen no lineal Para la Formación de Estructuras.}{10}{section.1.5}
-\contentsline {subsection}{\numberline {1.5.1}Aproximación de Zeldovich}{11}{subsection.1.5.1}
+\contentsline {section}{\numberline {1.4}Formación de Estructuras.}{8}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}Régimen Lineal Para la Formación de Estructuras.}{9}{subsection.1.4.1}
+\contentsline {subsubsection}{\numberline {1.4.1.1}Régimen Newtoniano.}{9}{subsubsection.1.4.1.1}
+\contentsline {subsection}{\numberline {1.4.2}Régimen no lineal Para la Formación de Estructuras.}{11}{subsection.1.4.2}
+\contentsline {subsubsection}{\numberline {1.4.2.1}Aproximación de Zeldovich}{11}{subsubsection.1.4.2.1}
 \contentsline {chapter}{\numberline {2}Teoría sobre AGN.}{15}{chapter.2}
 \contentsline {section}{\numberline {2.1}Introducción a AGN's}{16}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Historia}{16}{subsection.2.1.1}
@@ -27,7 +28,7 @@
 \contentsline {subsection}{\numberline {2.2.5}Objetos BL Lac}{20}{subsection.2.2.5}
 \contentsline {section}{\numberline {2.3}El Enigma Central: La existencia de un Agujero Negro}{21}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}La Existencia de los Agujeros Negros}{22}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Acreción.}{23}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.2}Proceso de Acreción.}{23}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3}Generación de Jets.}{23}{subsection.2.3.3}
 \contentsline {subsection}{\numberline {2.3.4}Formación de Lóbulos.}{24}{subsection.2.3.4}
 \contentsline {section}{\numberline {2.4}Modelo Unificado}{25}{section.2.4}
